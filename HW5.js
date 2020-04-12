@@ -133,11 +133,11 @@ HW5 ={
         return Object.assign({},...arguments)
     },
     Q7: (baseRange = [1,100], targetRange = [1,5], num = 70) => {
-        let ratio = (targetRange[1] - targetRange[0] + 1 ) / (baseRange[1] - baseRange[0] + 1 )
-        if(ratio == Infinity || ratio == -Infinity){
+        if(num > baseRange[1] || num < baseRange[0]){
             console.log("like not in range")
             return null;
         }
+        let ratio = (targetRange[1] - targetRange[0] + 1 ) / (baseRange[1] - baseRange[0] + 1 )
         return ((num - baseRange[0] + 1 ) * ratio ) + targetRange[0] - 1
     },
     Q8: (arrayArg = [])=>{
@@ -161,6 +161,6 @@ HW5 ={
 // console.log(HW5.Q4("user_example.",["user_example."]));
 // console.table(HW5.Q5(10))
 // console.table(HW5.Q6({ali:"reza"},{mohammad:"hassan"}))
-// console.log(HW5.Q7([-15,-3],[100,120],-5))
+// console.log(HW5.Q7([-15,-3],[100,120],100))
 // console.table(HW5.Q8([1,2,3,4,5,6,7,8,9]))
 // console.log(HW5.Q9("2020/03/02"))
